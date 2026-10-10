@@ -1,0 +1,74 @@
+{
+  "name": "dsh-find-file",
+  "version": "0.1.0",
+  "description": "Permission-wall-immune file finder for DeepSeek Harness: registers the find_file agent tool. Unlike the built-in glob, partial failures never discard results — unreadable directories are skipped and reported, and complete:false warns that the tree was not fully covered. Zero runtime dependencies.",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "find-file",
+    "glob",
+    "file-search",
+    "windows",
+    "permissions"
+  ],
+  "license": "MIT",
+  "author": "うんけん",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./walk": "./lib/walk.js",
+    "./match": "./lib/match.js",
+    "./config": "./lib/config.js",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "find-file": "bin/find-file.mjs"
+  },
+  "files": [
+    "lib/",
+    "bin/",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/",
+    "check": "node --check lib/index.js && node --check lib/walk.js && node --check lib/match.js && node --check lib/config.js && node --check lib/tool.js && node --check bin/find-file.mjs",
+    "manifest": "node tools/make-manifest.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ronniealgo/dsh-find-file.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ronniealgo/dsh-find-file/issues"
+  },
+  "homepage": "https://github.com/Ronniealgo/dsh-find-file#readme",
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "^0.1.7-rc.1 || ^0.2.0-rc.1"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "cordis.patch.yml"
+    },
+    "engines": {
+      "dsh": ">=0.2.0-rc.1"
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.0-rc.2": "compatible"
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+# dsh-find-file — permission-wall-immune file finder (agent tool)
+#
+# Registers the agent tool `find_file`. Defaults below are the entry-config
+# defaults; every one of them can be overridden per call by the agent
+# (maxResults / timeBudgetMs / maxDepth / includeDirs). Unknown config keys
+# fail the plugin loudly at load time — that is deliberate.
+- insert:
+    - id: find-file
+      name: dsh-find-file
+      config:
+        maxResults: 50
+        timeBudgetMs: 90000
+        maxDepth: 64
+        includeDirs: false

@@ -1,0 +1,77 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['20', '22', '24']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      # No install step on purpose: the plugin and its tests have zero
+      # runtime dependencies — that is the design, not an oversight.
+      - name: Test suites
+        run: node --test test/
+
+  test-windows:
+    # This plugin exists for the Windows ACL wall, so Windows is not an
+    # optional target: the suites must pass on a real Windows runner too.
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test suites on Windows
+        run: node --test test/
+
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax-check every source file
+        run: npm run check
+
+  linkcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Markdown links that must resolve locally
+        run: |
+          node -e '
+            const fs = require("node:fs");
+            const path = require("node:path");
+            const files = ["README.md", "CHANGELOG.md", "CONTRIBUTING.md", "SECURITY.md", "AGENTS.md", "docs/MOTIVATION.md"].filter(fs.existsSync);
+            const missing = [];
+            for (const file of files) {
+              const text = fs.readFileSync(file, "utf8");
+              for (const match of text.matchAll(/\]\(([^)\s]+)\)/g)) {
+                const target = match[1];
+                if (/^(https?:|#|mailto:)/.test(target)) continue;
+                const resolved = path.resolve(path.dirname(file), target.split("#")[0]);
+                if (!fs.existsSync(resolved)) missing.push(file + " -> " + target);
+              }
+            }
+            if (missing.length > 0) {
+              console.error("broken local links:\n" + missing.join("\n"));
+              process.exit(1);
+            }
+            console.log("local links resolve in " + files.length + " files");
+          '

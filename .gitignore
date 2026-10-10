@@ -1,0 +1,15 @@
+# Dependencies (none — keep the safety net anyway)
+node_modules/
+
+# Logs
+*.log
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+
+# Test coverage output
+coverage/
+
+# Scratch space
+tmp/

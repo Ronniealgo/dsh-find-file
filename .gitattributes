@@ -1,0 +1,15 @@
+# Normalize all text; what lands in the working tree is decided per extension below.
+* text=auto
+
+# Source and config files stay LF everywhere (the test runner and node --check
+# are happiest with LF, and diffs stay stable across platforms).
+*.js   text eol=lf
+*.mjs  text eol=lf
+*.yml  text eol=lf
+
+# PowerShell scripts are written and executed on Windows: keep CRLF.
+*.ps1  text eol=crlf
+
+# Binary markers (none in the repo today; guards for future fixtures).
+*.png  binary
+*.ico  binary
