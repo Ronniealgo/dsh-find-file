@@ -5,7 +5,7 @@
 ```bash
 git clone https://github.com/Ronniealgo/dsh-find-file.git
 cd dsh-find-file
-npm test        # node --test test/：4 个套件（match / walk / tool / cli）
+npm test        # 显式点名 4 个测试文件（match / walk / tool / cli；Node 22 起不再接受目录参数）
 npm run check   # node --check 全部源文件
 ```
 

@@ -38,7 +38,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "node --test test/",
+    "test": "node --test test/match.test.mjs test/walk.test.mjs test/tool.test.mjs test/cli.test.mjs",
     "check": "node --check lib/index.js && node --check lib/walk.js && node --check lib/match.js && node --check lib/config.js && node --check lib/tool.js && node --check bin/find-file.mjs",
     "manifest": "node tools/make-manifest.mjs"
   },

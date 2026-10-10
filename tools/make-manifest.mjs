@@ -68,7 +68,7 @@ lines.push(`bytes:   ${totalBytes}`);
 lines.push(`generated: ${new Date().toISOString()}`);
 lines.push("");
 lines.push("Reviewer commands:");
-lines.push("  node --test test/");
+lines.push("  node --test test/match.test.mjs test/walk.test.mjs test/tool.test.mjs test/cli.test.mjs");
 lines.push("  npm run check");
 if (testLines.length > 0) {
   lines.push("");

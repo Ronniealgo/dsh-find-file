@@ -4,6 +4,12 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+
+- CI 与 `npm test` 的测试命令：`node --test test/` 自 Node 22 起不再把目录参数当扫描根（报 `Cannot find module .../test`，Node 20 仍可用），改为显式点名四个测试文件，Node 20/22/24 行为一致。
+
 ## [0.1.0] - 2026-10-10
 
 ### Added

@@ -27,11 +27,15 @@ Short, factual notes so an automated contributor does not have to rediscover the
 ## Commands that decide whether a change is acceptable
 
 ```bash
-npm test        # node --test test/ — 4 suites: match, walk, tool, cli
+npm test        # node --test test/match.test.mjs test/walk.test.mjs test/tool.test.mjs test/cli.test.mjs
 npm run check   # node --check every source file
 ```
 
-Under a Windows workspace-write sandbox, `node --test test/` can fail with
+The four test files are named explicitly: a directory argument to `node
+--test` stopped being a scan root in Node 22 (`Cannot find module .../test`);
+only Node 20 still accepts it.
+
+Under a Windows workspace-write sandbox, `npm test` can fail with
 `spawn EPERM` because the runner spawns one child process per test file over
 piped stdio. In that case run the suites file by file
 (`node test/walk.test.mjs`, …); the CLI suite spawns `bin/find-file.mjs` via

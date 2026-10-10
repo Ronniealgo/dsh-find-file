@@ -25,7 +25,7 @@ jobs:
       # No install step on purpose: the plugin and its tests have zero
       # runtime dependencies — that is the design, not an oversight.
       - name: Test suites
-        run: node --test test/
+        run: node --test test/match.test.mjs test/walk.test.mjs test/tool.test.mjs test/cli.test.mjs
 
   test-windows:
     # This plugin exists for the Windows ACL wall, so Windows is not an
@@ -37,7 +37,7 @@ jobs:
         with:
           node-version: '22'
       - name: Test suites on Windows
-        run: node --test test/
+        run: node --test test/match.test.mjs test/walk.test.mjs test/tool.test.mjs test/cli.test.mjs
 
   check:
     runs-on: ubuntu-latest

@@ -166,7 +166,7 @@ node bin\find-file.mjs C:\Users\me\Documents "*.pdf" --include-dirs --quiet
 ## 测试与开发
 
 ```bash
-npm test        # node --test test/：4 个套件，零依赖，无需 npm install
+npm test        # 显式点名 4 个测试文件，零依赖，无需 npm install
 npm run check   # node --check 全部源文件
 ```
 

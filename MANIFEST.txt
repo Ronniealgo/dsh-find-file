@@ -1,22 +1,22 @@
 dsh-find-file — release manifest
 version: 0.1.0
-commit:  uncommitted
+commit:  d9693d322b305b3bad8f8d5ca768344bb72c4bef
 files:   26
-bytes:   93730
-generated: 2026-10-10T13:52:43.524Z
+bytes:   94518
+generated: 2026-10-10T14:20:39.797Z
 
 Reviewer commands:
-  node --test test/
+  node --test test/match.test.mjs test/walk.test.mjs test/tool.test.mjs test/cli.test.mjs
   npm run check
 
 sha256                                                            size  path
 f83dc8d19722b88629e65e381605fac4bdb2a21d54cef8dd54559cb051ba8922     490  .gitattributes
-635ee103a9acd534e9d2157747324ca0790052b5015ebd0b21defcbad7862520    2365  .github/workflows/ci.yml
+a2f9b5c87c88a43eddd01d453bab095fc3a6f1ccf93cec2793d90528aa0bbd44    2505  .github/workflows/ci.yml
 5a97b5a8af029ff2cbadaf85039b2289616e6d155bb7f23e48faad1f535db2cb     180  .gitignore
-dfe0de369fe86054c09f0dc2bc71cc82e9c44a4c9e326771c35aec2ddbda35cf    4056  AGENTS.md
+ce84771c2210568955304dd079723c7ef79f8296e9d74361a828fc754f0bbc51    4262  AGENTS.md
 958accfd6fe775d8491b8ceb811e6e2b6c8d01278f18843637b2430be37d0531    3763  bin/find-file.mjs
-c2e0205ffb0ed1b8049eb695ec2b7f6cccfaaea09d2b6ae7c2f90989e8767a12    1725  CHANGELOG.md
-94c96bb0a2f611caf0ec8fee14ca56bfd0922cc05fac7c8798f29b11d8a9ed83    2385  CONTRIBUTING.md
+b63d6afa7ad3c94ba42d95e08d84ec87dc6928a3625e0755813346314ff9fe2c    1991  CHANGELOG.md
+21d9ab62202a53921f2b3cbbd3df45e6ccd8dbe201fd26182513c7ac1924be73    2422  CONTRIBUTING.md
 0275284feb619be4a8222567e93aac8b3cb5ce9496d4ec5b0af3ab514398b4d9     523  cordis.patch.yml
 12f0bf0758e43dc74ec57032db20e595b7551147201fbab035c2e099ceee0389    4810  docs/MOTIVATION.md
 e07a5cf14cbb0c6643c77965d60a0e9e1fddfbbbb3207325c5f6b79434ca7b94    7739  install.ps1
@@ -26,8 +26,8 @@ a9d4c1723746377acaac1911af3f0678a8e02f93015b1dd671bf53541a8f5b61    2118  lib/ma
 0301e04144f6d1251e4c6d81101a412df7edcdc3444df8783e879d7420781d04    8397  lib/tool.js
 ea1cf86b0bf002af1a3ba1977c39a6b329e70288527214215a3d0afdf554eb6c    8087  lib/walk.js
 388bface916d07fca769a80a27ce880d3a1fbac773cf5df5e6cf1f5bb914aad2    1069  LICENSE
-c8d7ec4d1ddb14954f246fdd18718c5110ab772fa89eff5e130c6e9529a73821    1964  package.json
-56dd3b23ce902e1768735b87633091689ff7da59c13f629815e7a2f20cc36575    9561  README.md
+116328be90d31a66ceb5d5b372754db7caf42d678d011c9401f4e3ee7bac530d    2034  package.json
+1dae3142a255405799c4e08437db2e6b8700e741bd319d27e1df7016baf2c331    9560  README.md
 2ad6886bc9b71df5b5e942756b2d091e32eef573f1c34e150624fe0b9f4b5fb9    1901  SECURITY.md
 74cb19efea3fe58609322ce4ea8468a7bff6d6187140682c39cec4e2a2b2053a    2834  test/cli.test.mjs
 aa21d43b904f0187d25be873a8dbbccfec66cff8380afa99cd0297a8bdfaa84b    3466  test/helpers/fake-fs.mjs
@@ -35,4 +35,4 @@ aa21d43b904f0187d25be873a8dbbccfec66cff8380afa99cd0297a8bdfaa84b    3466  test/h
 16cc6d102567cef31aef892e3496279f30bca5ca313fe1586853087f51b5d43b    2093  test/match.test.mjs
 689168502f1a288da021933a37a6e6ba87366641902db4b63988bf879e52abd3    5533  test/tool.test.mjs
 d431cf514577b726ec4df381309ecd224244ec0b1b03927a8c568db47288432e    6983  test/walk.test.mjs
-32d32cfe88292fb89833b7943981721730eb0bb628bf411fe6b2c54ee9b1156d    3360  tools/make-manifest.mjs
+6182707784acc667d36f787d94c228c7307b18f3d09031ad69d765f254130c0e    3430  tools/make-manifest.mjs
