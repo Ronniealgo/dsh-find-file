@@ -1,6 +1,10 @@
 # dsh-find-file
 
+[![dshfind 收录](https://dshfind.com/api/badge/Ronniealgo/dsh-find-file?lang=zh)](https://dshfind.com/en/plugins/Ronniealgo/dsh-find-file?ref=badge)
+
 给 DeepSeek Harness（DSH）注册一个 `find_file` agent 工具：按文件名通配符（`*`、`?`）在指定根目录下找文件，撞上权限墙不会整次作废——读不了的目录跳过并如实上报，结果里永远标明这次搜索是否完整。纯 Node 实现，零运行时依赖，Node ≥ 20。
+
+> **上架状态（2026-10-11 核对）**：已被社区目录 [dshfind.com](https://dshfind.com/en/plugins/Ronniealgo/dsh-find-file) 自动收录，也进入了滚动榜单 [dshmk.com](https://dshmk.com/plugins/1413258695)。[DSH 插件市场](https://dsh.market/) 的提交单 [issue 226](https://github.com/2BingLing/dsh-market/issues/226) 仍在处理中，**尚未收录，故暂不挂该市场徽章**。收录与验证均为自动检测结果，不等于安全审计，也不代表 DSH 官方背书。
 
 同一棵树的两种命运：
 
